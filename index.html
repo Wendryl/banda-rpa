@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banda RPA - Reunidos para Adorar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
+  <style>
+    h1, h2, h3, button {
+      font-family: 'Anton SC';
+    }
+    h4, h5, h6,
+    body {
+      font-family: 'Martian Mono', monospace;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-zinc-200">
+  <nav>
+    <ul class="flex center bg-stone-900 text-zinc-300 font-bold uppercase gap-x-4 md:gap-x-8 place-content-center p-4 md:p-8">
+      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
+        <a href="#home">Home</a>
+      </li>
+      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
+        <a href="#agenda">Agenda</a>
+      </li>
+      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
+        <a href="#musicas">Músicas</a>
+      </li>
+      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
+        <a href="#contato">Contato</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <section class="bg-stone-900 uppercase">
+      <div class="p-4 pb-10 text-center shadow-2xl text-shadow-lg/30">
+        <h1 class="text-8xl text-amber-300 mb-2">
+          Banda Rpa
+        </h1>
+        <h2 class="text-4xl text-mist-500">
+          Reunidos Para Adorar
+        </h3>
+      </div>
+      <div class="bg-stone-950 w-full items-center flex flex-col">
+        <img src="./bg.webp" alt="Integrantes da banda RPA" class="max-w-[800px] shadow-lg w-full">
+      </div>
+    </section>
+    <section id="agenda" class="flex flex-col gap-6 p-4 text-mist-600 max-w-[800px] m-auto my-6">
+      <h3 class="text-4xl text-center my-7 uppercase">
+        Agenda
+      </h3>
+      <div class="p-4 uppercase flex flex-col items-center border border-2 border-mist-600 rounded-md">
+        <p class="text-amber-700">
+        12 Set | Santo Antônio do Pinhal
+        </p>
+      </div>
+    </section>
+    <section id="musicas" class="flex items-center flex-col text-zinc-200 bg-mist-600 py-6">
+      <h3 class="text-4xl text-center my-7 uppercase">
+        Músicas
+      </h3>
+      <div class="flex flex-col gap-8 items-center">
+        <a href="https://www.youtube.com/channel/UCDWLjyh-3Ctj_xpv2ve-OMA" class="flex items-center gap-2 hover:text-amber-400 transition duration-200 ease-in-out" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+          </svg>
+          <p>
+          Playlist no Youtube
+          </p>
+        </a>
+        <a href="https://www.youtube.com/@bandar.p.a1601" target="_blank" class="flex items-center gap-2 hover:text-amber-400 transition duration-200 ease-in-out">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
+          </svg>
+          <p>
+          Canal da banda
+          </p>
+        </a>
+        <iframe src="https://www.youtube.com/embed/XXxy-IPth9c?si=Pb4zZ8b5VlJQQRC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section id="contato" class="text-mist-600 py-6">
+      <h3 class="text-4xl text-center my-7 uppercase">
+        Contato para eventos
+      </h3>
+      <form method="POST" class="flex flex-col max-w-[500px] m-auto bg-zinc-100 p-6 gap-3">
+        <input type="text" name="name" required placeholder="Seu nome" class="border border-mist-600 border-2 rounded-sm p-2">
+        <input type="text" name="email" placeholder="Seu e-mail" class="border border-mist-600 border-2 rounded-sm p-2">
+        <input type="text" name="phone" placeholder="Telefone para contato" class="border border-mist-600 border-2 rounded-sm p-2">
+        <textarea name="message" placeholder="Sua mensagem" required class="border border-mist-600 border-2 rounded-sm p-2"></textarea>
+        <button type="submit" class="bg-amber-400 p-3 uppercase cursor-pointer text-lg">Enviar</button>
+      </form>
+    </section>
+    <div class="text-sm text-center my-4">
+      <p>
+        Copyright &copy; Banda RPA - 2026
+      </p>
+    </div>
+  </main>
+</body>
+</html>
