@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,99 +7,130 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Martian+Mono:wght@100..800&display=swap" rel="stylesheet">
-  <style>
-    h1, h2, h3, button {
-      font-family: 'Anton SC';
-    }
-    h4, h5, h6,
-    body {
-      font-family: 'Martian Mono', monospace;
-    }
-  </style>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-zinc-200">
-  <nav>
-    <ul class="flex center bg-stone-900 text-zinc-300 font-bold uppercase gap-x-4 md:gap-x-8 place-content-center p-4 md:p-8">
-      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
-        <a href="#home">Home</a>
-      </li>
-      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
-        <a href="#agenda">Agenda</a>
-      </li>
-      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
-        <a href="#musicas">Músicas</a>
-      </li>
-      <li class="hover:text-amber-300 transition duration-200 ease-in-out">
-        <a href="#contato">Contato</a>
-      </li>
-    </ul>
-  </nav>
-  <main>
-    <section class="bg-stone-900 uppercase">
-      <div class="p-4 pb-10 text-center shadow-2xl text-shadow-lg/30">
-        <h1 class="text-8xl text-amber-300 mb-2">
-          Banda Rpa
-        </h1>
-        <h2 class="text-4xl text-mist-500">
-          Reunidos Para Adorar
-        </h3>
-      </div>
-      <div class="bg-stone-950 w-full items-center flex flex-col">
-        <img src="./bg.webp" alt="Integrantes da banda RPA" class="max-w-[800px] shadow-lg w-full">
-      </div>
-    </section>
-    <section id="agenda" class="flex flex-col gap-6 p-4 text-mist-600 max-w-[800px] m-auto my-6">
-      <h3 class="text-4xl text-center my-7 uppercase">
-        Agenda
-      </h3>
-      <div class="p-4 uppercase flex flex-col items-center border border-2 border-mist-600 rounded-md">
-        <p class="text-amber-700">
-        12 Set | Santo Antônio do Pinhal
-        </p>
-      </div>
-    </section>
-    <section id="musicas" class="flex items-center flex-col text-zinc-200 bg-mist-600 py-6">
-      <h3 class="text-4xl text-center my-7 uppercase">
-        Músicas
-      </h3>
-      <div class="flex flex-col gap-8 items-center">
-        <a href="https://www.youtube.com/channel/UCDWLjyh-3Ctj_xpv2ve-OMA" class="flex items-center gap-2 hover:text-amber-400 transition duration-200 ease-in-out" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
-          </svg>
-          <p>
-          Playlist no Youtube
-          </p>
-        </a>
-        <a href="https://www.youtube.com/@bandar.p.a1601" target="_blank" class="flex items-center gap-2 hover:text-amber-400 transition duration-200 ease-in-out">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
-          </svg>
-          <p>
-          Canal da banda
-          </p>
-        </a>
-        <iframe src="https://www.youtube.com/embed/XXxy-IPth9c?si=Pb4zZ8b5VlJQQRC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-    </section>
-    <section id="contato" class="text-mist-600 py-6">
-      <h3 class="text-4xl text-center my-7 uppercase">
-        Contato para eventos
-      </h3>
-      <a href="https://wa.me/5512991953544?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20show!" target="_blank" class="flex items-center justify-center gap-2 max-w-[400px] m-auto bg-green-500 hover:bg-green-600 transition duration-200 ease-in-out text-white p-4 uppercase cursor-pointer text-lg">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-6">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
-        </svg>
-        Whatsapp
-      </a>
-    </section>
-    <div class="text-sm text-center my-4">
-      <p>
-        Copyright &copy; Banda RPA - 2026
-      </p>
+<body class="[font-family:'Martian_Mono',monospace] bg-black text-white">
+  <nav class="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-zinc-800">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+      <ul class="w-full justify-center flex gap-x-4 md:gap-x-8 text-xs md:text-sm text-zinc-300 uppercase font-bold">
+        <li>
+          <a href="#home" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#BB1F24] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Home</a>
+        </li>
+        <li>
+          <a href="#agenda" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#BB1F24] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Agenda</a>
+        </li>
+        <li>
+          <a href="#musicas" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#BB1F24] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Músicas</a>
+        </li>
+        <li>
+          <a href="#contato" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#BB1F24] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Contato</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+  <main>
+    <section id="home" class="relative flex flex-col items-center justify-center text-center px-4 py-24 md:py-36 bg-cover bg-center bg-[url('./bg.webp')]">
+      <div class="absolute inset-0 bg-black/75"></div>
+      <div class="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
+        <div class="h-44 md:h-60 shadow-2xl">
+          <img src="./logo.png" alt="Logo da banda RPA" class="w-full h-full object-cover">
+        </div>
+        <h1 class="[font-family:'Anton_SC'] text-5xl md:text-8xl text-white mt-10 uppercase">Banda Rpa</h1>
+        <h2 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-2xl md:text-4xl text-zinc-200 mt-3 uppercase after:absolute after:content-[''] after:bottom-[2px] after:left-0 after:-z-[1] after:h-2 after:w-full after:bg-[#BB1F24]">Reunidos Para Adorar</h2>
+        <div class="flex items-center gap-4 mt-10">
+          <a href="https://www.youtube.com/channel/UCDWLjyh-3Ctj_xpv2ve-OMA" target="_blank" aria-label="Playlist no Youtube" class="w-12 h-12 rounded-full bg-zinc-800 hover:bg-[#BB1F24] transition duration-200 ease-in-out flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@bandar.p.a1601" target="_blank" aria-label="Canal da banda" class="w-12 h-12 rounded-full bg-zinc-800 hover:bg-[#BB1F24] transition duration-200 ease-in-out flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
+            </svg>
+          </a>
+          <a href="https://wa.me/5512991953544?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20show!" target="_blank" aria-label="Contato no Whatsapp" class="w-12 h-12 rounded-full bg-zinc-800 hover:bg-[#BB1F24] transition duration-200 ease-in-out flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-5">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="agenda" class="py-20 px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm">Save the date</p>
+        <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-5xl md:text-6xl text-white uppercase mt-3 after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#BB1F24]">Agenda</h3>
+        <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm mt-3">Save the date</p>
+
+        <div class="mt-14 text-left bg-zinc-900 border border-zinc-800 rounded-md shadow-2xl">
+          <div class="p-8 md:p-12">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-8">
+              <div>
+                <h4 class="[font-family:'Anton_SC'] text-6xl text-[#BB1F24] uppercase leading-none">31 Out</h4>
+                <h4 class="[font-family:'Anton_SC'] text-2xl text-white uppercase mt-3">Pindamonhangaba</h4>
+              </div>
+            </div>
+            <div class="pt-6 space-y-3 text-sm">
+              <div class="flex gap-4">
+                <span class="text-white uppercase shrink-0">Local:</span>
+                <span class="text-zinc-400">Assembleia de Deus Min. Araretama - Pindamonhangaba/SP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="musicas" class="py-20 px-4 bg-zinc-950 border-y border-zinc-800">
+      <div class="max-w-3xl mx-auto text-center">
+        <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-5xl text-white uppercase after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#BB1F24]">Músicas</h3>
+        <p class="text-zinc-400 mt-5 mb-10 uppercase tracking-wide">Ouça a banda</p>
+        <iframe src="https://www.youtube.com/embed/XXxy-IPth9c?si=Pb4zZ8b5VlJQQRC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full aspect-video rounded-md shadow-2xl border border-zinc-800"></iframe>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10">
+          <a href="https://www.youtube.com/channel/UCDWLjyh-3Ctj_xpv2ve-OMA" target="_blank" class="flex items-center gap-2 border border-zinc-700 hover:border-[#BB1F24] hover:text-white transition duration-200 ease-in-out px-6 py-3 uppercase text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+            </svg>
+            Playlist no Youtube
+          </a>
+          <a href="https://www.youtube.com/@bandar.p.a1601" target="_blank" class="flex items-center gap-2 border border-zinc-700 hover:border-[#BB1F24] hover:text-white transition duration-200 ease-in-out px-6 py-3 uppercase text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 9 10.5-3m0 6.553v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 1 1-.99-3.467l2.31-.66a2.25 2.25 0 0 0 1.632-2.163Zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 0 1-1.632 2.163l-1.32.377a1.803 1.803 0 0 1-.99-3.467l2.31-.66A2.25 2.25 0 0 0 9 15.553Z" />
+            </svg>
+            Canal da banda
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-20 px-4 text-center">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm">Agende um show</p>
+        <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-4xl md:text-5xl text-white uppercase mt-3 after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#BB1F24]">Contato para eventos</h3>
+        <a href="https://wa.me/5512991953544?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20show!" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#BB1F24] hover:bg-zinc-800 transition duration-200 ease-in-out text-white px-10 py-4 mt-12 uppercase text-lg shadow-2xl">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-6">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+          </svg>
+          Whatsapp
+        </a>
+      </div>
+    </section>
+
+    <footer class="border-t border-zinc-800 py-8 px-4 text-center text-sm text-zinc-500">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <img src="./logo.jpeg" alt="Logo da banda RPA" class="h-8 w-8 rounded-full object-cover opacity-70">
+        <span class="uppercase tracking-wide">Banda RPA</span>
+      </div>
+      <p>Copyright &copy; Banda RPA - <span id="ano"></span></p>
+    </footer>
   </main>
+
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
