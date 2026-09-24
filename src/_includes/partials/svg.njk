@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" {% if icon.kind == 'stroke' %}fill="none" stroke="currentColor" stroke-width="1.5"{% else %}fill="currentColor"{% endif %} viewBox="0 0 24 24" class="size-5">
+  {% for d in icon.paths %}
+    <path{% if icon.kind == 'stroke' %} stroke-linecap="round" stroke-linejoin="round"{% endif %} d="{{ d }}" />
+  {% endfor %}
+</svg>

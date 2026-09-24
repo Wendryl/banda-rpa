@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+permalink: /index.html
+---
+
+<section id="home" class="relative flex flex-col items-center justify-center text-center bg-cover bg-fixed bg-[url('./gallery/gallery-010.jpeg')] py-8">
+  <div class="absolute inset-0 bg-black/75"></div>
+  <div class="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
+    <div class="max-w-[400px]">
+      <img src="./logo.png" alt="Logo da banda RPA" class="w-full h-full object-cover">
+    </div>
+    <h1 class="[font-family:'Anton_SC'] text-5xl md:text-8xl text-white mt-10 uppercase">Banda Rpa</h1>
+    <h2 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-2xl md:text-4xl text-zinc-200 mt-3 uppercase after:absolute after:content-[''] after:bottom-[2px] after:left-0 after:-z-[1] after:h-2 after:w-full after:bg-[#990000]">Reunidos Para Adorar</h2>
+    <div class="flex items-center gap-4 mt-10">
+      {% for item in site.social %}
+        {% set icon = site.icons[item.icon] %}
+        <a href="{{ item.href }}" target="_blank" aria-label="{{ item.label }}" class="w-12 h-12 rounded-full bg-zinc-800 hover:bg-[#990000] transition duration-200 ease-in-out flex items-center justify-center">
+          {% include "partials/svg.njk" %}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="agenda" class="py-20 px-4">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm">Save the date</p>
+    <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-5xl md:text-6xl text-white uppercase mt-3 after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#990000]">Agenda</h3>
+    <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm mt-3">Save the date</p>
+
+    <div class="mt-14 space-y-6">
+      {% for show in agenda.shows %}
+        <div class="text-left bg-zinc-900 border border-zinc-800 rounded-md shadow-2xl">
+          <div class="p-8 md:p-12">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-800 pb-8">
+              <div>
+                <h4 class="[font-family:'Anton_SC'] text-6xl text-[#990000] uppercase leading-none">{{ show.date | diaMes }}</h4>
+                <h4 class="[font-family:'Anton_SC'] text-2xl text-white uppercase mt-3">{{ show.city }}</h4>
+              </div>
+              {% if show.venue %}<div class="flex gap-4 text-sm max-w-md">
+                <span class="text-white uppercase shrink-0">Local:</span>
+                <span class="text-zinc-400">{{ show.venue }}</span>
+              </div>{% endif %}
+            </div>
+          </div>
+        </div>
+      {% else %}
+        <p class="text-zinc-400 uppercase tracking-wide">Em breve divulgaremos novas datas</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="musicas" class="py-20 px-4 bg-zinc-950 border-y border-zinc-800">
+  <div class="max-w-3xl mx-auto text-center">
+    <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-5xl text-white uppercase after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#990000]">Músicas</h3>
+    <p class="text-zinc-400 mt-5 mb-10 uppercase tracking-wide">Ouça a banda</p>
+    <iframe src="https://www.youtube.com/embed/XXxy-IPth9c?si=Pb4zZ8b5VlJQQRC8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full aspect-video rounded-md shadow-2xl border border-zinc-800"></iframe>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10">
+      {% for item in site.musicas %}
+        {% set icon = site.icons[item.icon] %}
+        <a href="{{ site.links[item.hrefKey] }}" target="_blank" class="flex items-center gap-2 border border-zinc-700 hover:border-[#990000] hover:text-white transition duration-200 ease-in-out px-6 py-3 uppercase text-sm hover:bg-[#990000]">
+          {% include "partials/svg.njk" %}
+          {{ item.label }}
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="py-20 px-4 text-center">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm">Agende um show</p>
+    <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-4xl md:text-5xl text-white uppercase mt-3 after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#990000]">Contato para eventos</h3>
+    <a href="{{ site.links.whatsapp }}" target="_blank" class="inline-flex items-center justify-center gap-3 bg-[#990000] hover:bg-zinc-800 transition duration-200 ease-in-out text-white px-10 py-4 mt-12 uppercase text-lg shadow-2xl">
+      {% set icon = site.icons.whatsapp %}
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="size-6">
+        {% for d in icon.paths %}<path d="{{ d }}" />{% endfor %}
+      </svg>
+      Whatsapp
+    </a>
+  </div>
+</section>

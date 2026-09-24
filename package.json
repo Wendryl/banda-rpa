@@ -1,17 +1,19 @@
 {
   "name": "banda-rpa",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Site da Banda RPA - Reunidos Para Adorar",
   "scripts": {
-    "start": "npx live-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site",
+    "cms": "decap-server"
   },
-  "keywords": [],
+  "keywords": ["banda", "site", "eleventy"],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "live-server": "^1.2.2"
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "decap-server": "^3.1.0"
   }
 }

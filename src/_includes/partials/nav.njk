@@ -1,0 +1,21 @@
+<nav class="sticky top-0 z-50 bg-black/95 backdrop-blur border-b border-zinc-800">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3 md:py-4">
+    <ul class="w-full justify-center flex gap-x-4 md:gap-x-8 text-xs md:text-sm text-zinc-300 uppercase font-bold">
+      <li>
+        <a href="index.html#home" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#990000] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Home</a>
+      </li>
+      <li>
+        <a href="index.html#agenda" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#990000] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Agenda</a>
+      </li>
+      <li>
+        <a href="gallery.html" class="relative transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#990000] after:origin-left after:transition-transform after:duration-200 after:ease-in-out {% if page.url === '/gallery.html' %}text-white after:scale-x-100{% else %}hover:text-white after:scale-x-0 hover:after:scale-x-100{% endif %}">Galeria</a>
+      </li>
+      <li>
+        <a href="index.html#musicas" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#990000] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Músicas</a>
+      </li>
+      <li>
+        <a href="index.html#contato" class="relative hover:text-white transition duration-200 ease-in-out after:absolute after:content-[''] after:-bottom-1.5 after:left-0 after:w-full after:h-[2px] after:bg-[#990000] after:origin-left after:scale-x-0 after:transition-transform after:duration-200 after:ease-in-out hover:after:scale-x-100">Contato</a>
+      </li>
+    </ul>
+  </div>
+</nav>

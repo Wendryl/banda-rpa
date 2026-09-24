@@ -1,0 +1,24 @@
+---
+title: Banda RPA
+---
+<!DOCTYPE html>
+<html lang="{{ site.lang }}" class="scroll-smooth">
+<head>
+  {% include "partials/head.njk" %}
+</head>
+<body class="[font-family:'Martian_Mono',monospace] bg-black text-white">
+  {% include "partials/nav.njk" %}
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.getElementById("ano").textContent = new Date().getFullYear();
+    GLightbox({ selector: "[data-glightbox]" });
+  </script>
+</body>
+</html>

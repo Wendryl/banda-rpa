@@ -1,0 +1,53 @@
+backend:
+  name: github
+  repo: Wendryl/banda-rpa
+  branch: master
+  base_url: https://decap-cms-proxy.onrender.com/
+  auth_endpoint: /auth
+
+local_backend: false
+
+locale: pt
+
+media_folder: "src/gallery"
+public_folder: "./gallery"
+
+collections:
+  - name: agenda
+    label: "Shows"
+    description: "Editar, adicionar e remover shows da agenda"
+    format: json
+    files:
+      - name: shows
+        label: "Shows"
+        file: "src/_data/agenda.json"
+        fields:
+          - label: "Shows"
+            name: shows
+            widget: list
+            collapsed: false
+            hint: "Arraste para reordenar. Use o botão para adicionar ou remover."
+            fields:
+              - { label: "Data", name: date, widget: datetime, format: "YYYY-MM-DD" }
+              - { label: "Cidade", name: city, widget: string }
+              - { label: "Local / Venue", name: venue, widget: string, required: false }
+
+  - name: gallery
+    label: "Galeria"
+    description: "Adicionar, excluir e reordenar fotos"
+    format: json
+    files:
+      - name: photos
+        label: "Fotos"
+        file: "src/_data/gallery-manifest.json"
+        fields:
+          - label: "Fotos"
+            name: photos
+            widget: list
+            collapsed: false
+            hint: "A ordem aqui é a exibição no site. Remova um item para ocultar a foto. Envie novas fotos pelo botão de mídia."
+            fields:
+              - label: "Foto"
+                name: file
+                widget: image
+                choose_url: false
