@@ -31,6 +31,8 @@ jobs:
         run: npm ci
       - name: Build with Eleventy
         run: npm run build
+      - name: Prevent Jekyll processing
+        run: touch _site/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
