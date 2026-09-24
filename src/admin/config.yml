@@ -2,8 +2,9 @@ backend:
   name: github
   repo: Wendryl/banda-rpa
   branch: master
-  base_url: https://decap-cms-proxy.onrender.com/
-  auth_endpoint: /auth
+  base_url: https://decap-cms-proxy.onrender.com
+  auth_endpoint: auth
+  auth_scope: repo
 
 local_backend: false
 
