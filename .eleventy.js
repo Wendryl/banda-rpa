@@ -11,6 +11,17 @@ module.exports = function (eleventyConfig) {
     return `${day} ${monthAbbrs[month - 1]}`;
   });
 
+  eleventyConfig.addFilter("isToday", (dateISO) => {
+    if (!dateISO) return false;
+    const now = new Date();
+    const today = [
+      now.getFullYear(),
+      String(now.getMonth() + 1).padStart(2, "0"),
+      String(now.getDate()).padStart(2, "0"),
+    ].join("-");
+    return String(dateISO) === today;
+  });
+
   eleventyConfig.addPassthroughCopy("src/gallery");
   eleventyConfig.addPassthroughCopy("src/admin/config.yml");
   eleventyConfig.addPassthroughCopy("src/admin/preview.js");
