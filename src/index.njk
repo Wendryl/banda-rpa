@@ -29,7 +29,7 @@ permalink: /index.html
     <p class="text-zinc-500 uppercase tracking-[0.3em] text-sm mt-3">Save the date</p>
 
     <div class="mt-14 space-y-6">
-      {% for show in agenda.shows %}
+      {% for show in agenda.shows | upcoming %}
         <div class="relative text-left bg-zinc-900 border rounded-md shadow-2xl{% if show.date | isToday %} border-[#990000] shadow-[0_0_35px_rgba(153,0,0,0.4)]{% else %} border-zinc-800{% endif %}">
           {% if show.date | isToday %}
           <span class="absolute top-6 right-6 md:top-8 md:right-8 inline-flex items-center gap-2 bg-[#990000] text-white text-xs uppercase tracking-[0.2em] px-3 py-1.5 rounded-full">

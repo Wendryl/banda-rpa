@@ -11,15 +11,24 @@ module.exports = function (eleventyConfig) {
     return `${day} ${monthAbbrs[month - 1]}`;
   });
 
-  eleventyConfig.addFilter("isToday", (dateISO) => {
-    if (!dateISO) return false;
+  const todayISO = () => {
     const now = new Date();
-    const today = [
+    return [
       now.getFullYear(),
       String(now.getMonth() + 1).padStart(2, "0"),
       String(now.getDate()).padStart(2, "0"),
     ].join("-");
-    return String(dateISO) === today;
+  };
+
+  eleventyConfig.addFilter("isToday", (dateISO) => {
+    if (!dateISO) return false;
+    return String(dateISO) === todayISO();
+  });
+
+  eleventyConfig.addFilter("upcoming", (shows) => {
+    if (!Array.isArray(shows)) return [];
+    const today = todayISO();
+    return shows.filter((show) => show && String(show.date) >= today);
   });
 
   eleventyConfig.addPassthroughCopy("src/gallery");
