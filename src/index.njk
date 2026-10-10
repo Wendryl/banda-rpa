@@ -4,21 +4,21 @@ permalink: /index.html
 ---
 
 {% block extraHead %}
-<link rel="preload" as="image" href="./optimized/hero.avif" type="image/avif" fetchpriority="high">
+<link rel="preload" as="image" type="image/avif" href="./optimized/hero-1280.avif" imagesrcset="./optimized/hero-640.avif 640w, ./optimized/hero-960.avif 960w, ./optimized/hero-1280.avif 1280w" imagesizes="100vw" fetchpriority="high">
 {% endblock %}
 
 <section id="home" class="relative flex flex-col items-center justify-center text-center py-8">
   <picture class="block absolute inset-0 w-full h-full">
-    <source srcset="./optimized/hero.avif" type="image/avif">
-    <source srcset="./optimized/hero.webp" type="image/webp">
+    <source type="image/avif" srcset="./optimized/hero-640.avif 640w, ./optimized/hero-960.avif 960w, ./optimized/hero-1280.avif 1280w" sizes="100vw">
+    <source type="image/webp" srcset="./optimized/hero-640.webp 640w, ./optimized/hero-960.webp 960w, ./optimized/hero-1280.webp 1280w" sizes="100vw">
     <img src="./gallery/gallery-010.jpeg" alt="" aria-hidden="true" width="1280" height="1280" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
   </picture>
   <div class="absolute inset-0 bg-black/75"></div>
   <div class="relative z-10 flex flex-col items-center max-w-3xl mx-auto">
     <div class="max-w-[400px]">
       <picture class="block">
-        <source srcset="./optimized/logo.avif" type="image/avif">
-        <source srcset="./optimized/logo.webp" type="image/webp">
+        <source type="image/avif" srcset="./optimized/logo-400.avif 400w, ./optimized/logo-800.avif 800w" sizes="(min-width: 400px) 400px, 100vw">
+        <source type="image/webp" srcset="./optimized/logo-400.webp 400w, ./optimized/logo-800.webp 800w" sizes="(min-width: 400px) 400px, 100vw">
         <img src="./logo.png" alt="Logo da banda RPA" width="800" height="533" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
       </picture>
     </div>
@@ -78,7 +78,7 @@ permalink: /index.html
     <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-5xl text-white uppercase after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#990000]">Músicas</h3>
     <p class="text-zinc-400 mt-5 mb-10 uppercase tracking-wide">Ouça a banda</p>
     <div id="youtube-facade" data-video="XXxy-IPth9c" role="button" tabindex="0" aria-label="Reproduzir vídeo da banda no YouTube" class="group relative w-full aspect-video rounded-md shadow-2xl border border-zinc-800 overflow-hidden cursor-pointer">
-      <img src="./youtube-poster.webp" alt="Banda RPA em apresentação" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-105">
+      <img src="./optimized/youtube-poster-1280.webp" srcset="./optimized/youtube-poster-640.webp 640w, ./optimized/youtube-poster-1280.webp 1280w" sizes="(min-width: 768px) 768px, 100vw" alt="Banda RPA em apresentação" width="1280" height="720" loading="lazy" decoding="async" class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-105">
       <span class="absolute inset-0 flex items-center justify-center">
         <span class="flex items-center justify-center size-16 md:size-20 rounded-full bg-[#990000] group-hover:bg-[#e53935] transition duration-300 ease-in-out shadow-2xl">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-8 md:size-10 text-white translate-x-0.5" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>

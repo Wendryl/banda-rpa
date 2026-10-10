@@ -3,6 +3,7 @@ const path = require("path");
 
 const galleryDir = path.join(__dirname, "..", "gallery");
 const optimizedDir = path.join(__dirname, "..", "optimized", "gallery");
+const THUMB_WIDTHS = [400, 800];
 
 function fileNameFor(file) {
   return String(file || "").replace(/^\.?\/?(gallery\/)?/, "");
@@ -16,9 +17,23 @@ function scannedPhotos() {
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
 }
 
+function srcset(name, ext, widths) {
+  const parts = widths
+    .map((width) => {
+      const file = `${name}-${width}.${ext}`;
+      return fs.existsSync(path.join(optimizedDir, file))
+        ? `./optimized/gallery/${file} ${width}w`
+        : null;
+    })
+    .filter(Boolean);
+  return parts.length ? parts.join(", ") : null;
+}
+
 function optimizedPath(name, ext) {
-  const candidate = path.join(optimizedDir, `${name}.${ext}`);
-  return fs.existsSync(candidate) ? `./optimized/gallery/${name}.${ext}` : null;
+  const file = `${name}.${ext}`;
+  return fs.existsSync(path.join(optimizedDir, file))
+    ? `./optimized/gallery/${file}`
+    : null;
 }
 
 module.exports = function () {
@@ -30,10 +45,11 @@ module.exports = function () {
     .map((file, index) => {
       const original = `./gallery/${file}`;
       const base = file.replace(/\.[^.]+$/, "");
+      const thumbWebp = srcset(base, "webp", THUMB_WIDTHS);
       return {
         src: original,
-        thumbAvif: optimizedPath(base, "avif"),
-        thumbWebp: optimizedPath(base, "webp") || original,
+        thumbAvif: srcset(base, "avif", THUMB_WIDTHS),
+        thumbWebp: thumbWebp || original,
         full: optimizedPath(`${base}-full`, "webp") || original,
         alt: `Foto ${index + 1} da galeria`,
       };

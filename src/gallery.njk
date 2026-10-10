@@ -4,10 +4,6 @@ permalink: /gallery.html
 title: Galeria - Banda RPA
 ---
 
-{% block extraHead %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
-{% endblock %}
-
 <section class="py-14 md:py-20 px-4">
   <div class="max-w-6xl mx-auto text-center">
     <p class="text-zinc-400 uppercase tracking-[0.3em] text-sm">Nossos momentos</p>
@@ -17,9 +13,9 @@ title: Galeria - Banda RPA
       {% for foto in gallery %}
         <a href="{{ foto.full }}" data-glightbox="galeria" {% if foto.caption %}data-title="{{ foto.caption }}"{% endif %} class="group relative block aspect-square overflow-hidden rounded-md border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#990000]">
           <picture>
-            {% if foto.thumbAvif %}<source srcset="{{ foto.thumbAvif }}" type="image/avif">{% endif %}
-            <source srcset="{{ foto.thumbWebp }}" type="image/webp">
-            <img src="{{ foto.src }}" alt="{{ foto.alt }}" loading="lazy" decoding="async" class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-105">
+            {% if foto.thumbAvif %}<source srcset="{{ foto.thumbAvif }}" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" type="image/avif">{% endif %}
+            <source srcset="{{ foto.thumbWebp }}" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" type="image/webp">
+            <img src="{{ foto.src }}" alt="{{ foto.alt }}" loading="{{ 'eager' if loop.first else 'lazy' }}" fetchpriority="{{ 'high' if loop.first else 'low' }}" decoding="{{ 'sync' if loop.first else 'async' }}" class="w-full h-full object-cover transition duration-300 ease-in-out group-hover:scale-105">
           </picture>
         </a>
       {% endfor %}
@@ -27,9 +23,94 @@ title: Galeria - Banda RPA
   </div>
 </section>
 
-{% block extraScripts %}
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  GLightbox({ selector: "[data-glightbox]" });
+(function () {
+  var grid = document.getElementById("galeria-grid");
+  if (!grid || !("IntersectionObserver" in window)) return;
+
+  var imgs = grid.querySelectorAll('img:not([fetchpriority="high"])');
+  imgs.forEach(function (img) {
+    var pic = img.closest("picture");
+    if (pic) {
+      pic.querySelectorAll("source[srcset]").forEach(function (source) {
+        source.setAttribute("data-srcset", source.getAttribute("srcset"));
+        source.removeAttribute("srcset");
+      });
+    }
+    if (img.getAttribute("src")) {
+      img.setAttribute("data-src", img.getAttribute("src"));
+      img.removeAttribute("src");
+    }
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var img = entry.target;
+      var pic = img.closest("picture");
+      if (pic) {
+        pic.querySelectorAll("source[data-srcset]").forEach(function (source) {
+          source.setAttribute("srcset", source.getAttribute("data-srcset"));
+          source.removeAttribute("data-srcset");
+        });
+      }
+      img.setAttribute("src", img.getAttribute("data-src"));
+      img.removeAttribute("data-src");
+      io.unobserve(img);
+    });
+  }, { rootMargin: "300px" });
+
+  imgs.forEach(function (img) {
+    io.observe(img);
+  });
+})();
+</script>
+
+{% block extraScripts %}
+<script>
+(function () {
+  var grid = document.getElementById("galeria-grid");
+  if (!grid) return;
+
+  var links = Array.prototype.slice.call(grid.querySelectorAll("a[data-glightbox]"));
+  var lightbox = null;
+  var loading = false;
+  var pending = -1;
+
+  function boot() {
+    grid.removeEventListener("click", onClick);
+    lightbox = GLightbox({ selector: "[data-glightbox]" });
+    if (pending >= 0) lightbox.openAt(pending);
+    pending = -1;
+  }
+
+  function load() {
+    if (loading) return;
+    loading = true;
+    var css = document.createElement("link");
+    css.rel = "stylesheet";
+    css.href = "./vendor/glightbox/glightbox.min.css";
+    document.head.appendChild(css);
+    var js = document.createElement("script");
+    js.src = "./vendor/glightbox/glightbox.min.js";
+    js.onload = boot;
+    document.head.appendChild(js);
+  }
+
+  function onClick(event) {
+    var link = event.target.closest("a[data-glightbox]");
+    if (!link) return;
+    event.preventDefault();
+    var index = links.indexOf(link);
+    if (lightbox) {
+      lightbox.openAt(index < 0 ? 0 : index);
+    } else {
+      pending = index < 0 ? 0 : index;
+      load();
+    }
+  }
+
+  grid.addEventListener("click", onClick);
+})();
 </script>
 {% endblock %}

@@ -1,6 +1,17 @@
+const fs = require("fs");
+const path = require("path");
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("_site");
+
+  eleventyConfig.addShortcode("inlineCss", () => {
+    const cssPath = path.join(__dirname, "src", "css", "site.css");
+    if (!fs.existsSync(cssPath)) {
+      return '<link rel="stylesheet" href="./css/site.css">';
+    }
+    return `<style>${fs.readFileSync(cssPath, "utf8")}</style>`;
+  });
 
   const monthAbbrs = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
 
@@ -34,6 +45,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/gallery");
   eleventyConfig.addPassthroughCopy("src/optimized");
   eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy("src/vendor");
   eleventyConfig.addPassthroughCopy({ "src/css/site.css": "css/site.css" });
   eleventyConfig.addPassthroughCopy("src/admin/config.yml");
   eleventyConfig.addPassthroughCopy("src/admin/preview.js");
@@ -49,7 +61,6 @@ module.exports = function (eleventyConfig) {
     "logo.jpeg",
     "logo.png",
     "site.webmanifest",
-    "youtube-poster.webp",
   ];
   rootAssets.forEach((file) => eleventyConfig.addPassthroughCopy(`src/${file}`));
 
