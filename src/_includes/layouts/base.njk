@@ -6,7 +6,7 @@ title: Banda RPA
 <head>
   {% include "partials/head.njk" %}
 </head>
-<body class="[font-family:'Martian_Mono',monospace] bg-black text-white">
+<body class="[font-family:'Martian_Mono_Variable',monospace] bg-black text-white">
   {% include "partials/nav.njk" %}
 
   <main>
@@ -15,10 +15,9 @@ title: Banda RPA
 
   {% include "partials/footer.njk" %}
 
-  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script>
     document.getElementById("ano").textContent = new Date().getFullYear();
-    GLightbox({ selector: "[data-glightbox]" });
   </script>
+  {% block extraScripts %}{% endblock %}
 </body>
 </html>

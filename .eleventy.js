@@ -32,6 +32,9 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("src/gallery");
+  eleventyConfig.addPassthroughCopy("src/optimized");
+  eleventyConfig.addPassthroughCopy("src/fonts");
+  eleventyConfig.addPassthroughCopy({ "src/css/site.css": "css/site.css" });
   eleventyConfig.addPassthroughCopy("src/admin/config.yml");
   eleventyConfig.addPassthroughCopy("src/admin/preview.js");
 
@@ -46,6 +49,7 @@ module.exports = function (eleventyConfig) {
     "logo.jpeg",
     "logo.png",
     "site.webmanifest",
+    "youtube-poster.webp",
   ];
   rootAssets.forEach((file) => eleventyConfig.addPassthroughCopy(`src/${file}`));
 

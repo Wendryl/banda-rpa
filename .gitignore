@@ -1,2 +1,4 @@
 node_modules/
 _site/
+src/css/site.css
+src/optimized/
