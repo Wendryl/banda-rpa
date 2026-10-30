@@ -42,9 +42,15 @@ arquivos de conteúdo direto no repositório.
 2. Terminal 2: `npm run cms` → proxy do CMS em `http://localhost:8081`
 3. Abra `http://localhost:8080/admin/` e faça login (local, sem autenticação).
 
-O proxy usa `src/admin/config.yml`. A autenticação GitHub para o site em
-produção (GitHub Pages) ainda **não está configurada** — é o próximo passo
-(OAuth App ou GitHub App).
+Como `local_backend: true`, no `localhost` o CMS usa o `decap-server` em vez do
+proxy de OAuth — isso evita o erro `Invalid origin: http://localhost:8080`. Pode
+deixar essa opção versionada: ela só tem efeito em `localhost`.
+
+Em produção (GitHub Pages), a autenticação GitHub já está configurada pelo proxy
+de OAuth em `https://decap-cms-proxy.onrender.com`, definido em
+`src/admin/config.yml` (`base_url` + `auth_endpoint`). Garanta que o proxy permita
+a origem do site publicado (ex.: o domínio do GitHub Pages ou o domínio customizado)
+para que o login funcione.
 
 ### O que o CMS edita
 
@@ -54,6 +60,7 @@ Apenas **Galeria** e **Shows** (agenda):
 - **Galeria** → `src/_data/gallery-manifest.json` + `src/gallery/`:
   - *Enviar novas fotos* → botão de mídia (upload para `src/gallery/`).
   - *Excluir/ocultar uma foto* → remover o item da lista (o arquivo permanece em `src/gallery/`).
+  - *Adicionar* → a nova foto entra no topo da lista.
   - *Reordenar* → arrastar os itens na lista.
 
 ## Como adicionar conteúdo
@@ -62,7 +69,8 @@ Apenas **Galeria** e **Shows** (agenda):
 
 ### Fotos na galeria
 Em `src/_data/gallery-manifest.json`, use a lista `photos` (a ordem da lista é a ordem
-exibida no site; itens fora da lista ficam ocultos):
+exibida no site; itens fora da lista ficam ocultos). Pelo CMS, novas fotos são
+adicionadas no topo da lista e aparecem primeiro no site:
 
 ```json
 {

@@ -6,7 +6,7 @@ backend:
   auth_endpoint: auth
   auth_scope: repo
 
-local_backend: false
+local_backend: true
 
 locale: pt
 
@@ -46,7 +46,8 @@ collections:
             name: photos
             widget: list
             collapsed: false
-            hint: "A ordem aqui é a exibição no site. Remova um item para ocultar a foto. Envie novas fotos pelo botão de mídia."
+            add_to_top: true
+            hint: "Novas fotos são adicionadas no topo e aparecem primeiro no site. A ordem aqui é a exibição no site. Remova um item para ocultar a foto. Envie novas fotos pelo botão de mídia."
             fields:
               - label: "Foto"
                 name: file
