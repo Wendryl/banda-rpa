@@ -181,6 +181,7 @@ if (window.CMS) {
   });
 
   CMS.registerPreviewTemplate("videos", function ({ entry, getAsset }) {
+    const FALLBACK_POSTER = "/optimized/youtube-poster-1280.webp";
     const list = entry.getIn(["data", "videos"]);
     const items = [];
     if (list && list.size) {
@@ -247,7 +248,7 @@ if (window.CMS) {
         { key: idx, style: cardStyle },
         h("video", {
           src: assetUrl(item.file),
-          poster: assetUrl(item.poster) || undefined,
+          poster: assetUrl(item.poster) || FALLBACK_POSTER,
           controls: true,
           preload: "metadata",
           playsInline: true,

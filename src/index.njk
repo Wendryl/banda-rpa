@@ -102,14 +102,14 @@ permalink: /index.html
   <div class="max-w-6xl mx-auto text-center">
     <h3 class="[font-family:'Anton_SC'] relative inline-block z-[1] text-5xl text-white uppercase after:absolute after:content-[''] after:bottom-0 after:left-0 after:-z-[1] after:h-3.5 after:w-full after:bg-[#990000]">Vídeos</h3>
     <p class="text-zinc-400 mt-5 mb-10 uppercase tracking-wide">Assista a banda</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="-mx-4 md:mx-0 flex flex-wrap justify-center gap-4 md:gap-6">
       {% for video in videos %}
-        <figure class="text-left">
-          <video controls playsinline preload="metadata" {% if video.poster %}poster="{{ video.poster }}"{% endif %} class="w-full aspect-video object-cover rounded-md border border-zinc-800 bg-black shadow-2xl">
+        <figure class="text-left w-full md:w-[calc(50%-0.75rem)]">
+          <video controls preload="metadata" poster="{{ video.poster }}" class="w-full aspect-video object-cover rounded-none md:rounded-md border-y border-x-0 md:border-x border-zinc-800 bg-black shadow-2xl">
             <source src="{{ video.src }}" type="{{ video.type }}">
             Seu navegador não suporta a reprodução de vídeos.
           </video>
-          {% if video.title %}<figcaption class="mt-3 text-sm text-zinc-400 uppercase tracking-wide">{{ video.title }}</figcaption>{% endif %}
+          {% if video.title %}<figcaption class="mt-3 px-4 md:px-0 text-sm text-zinc-400 uppercase tracking-wide">{{ video.title }}</figcaption>{% endif %}
         </figure>
       {% endfor %}
     </div>
@@ -154,6 +154,23 @@ permalink: /index.html
         load();
       }
     }, { once: true });
+  })();
+
+  (function () {
+    function isMobile() {
+      return window.matchMedia("(max-width: 767px), (pointer: coarse)").matches;
+    }
+
+    document.querySelectorAll("#videos video").forEach(function (video) {
+      video.addEventListener("play", function () {
+        if (!isMobile() || document.fullscreenElement) return;
+        if (typeof video.requestFullscreen !== "function") return;
+        try {
+          var result = video.requestFullscreen();
+          if (result && typeof result.catch === "function") result.catch(function () {});
+        } catch (e) {}
+      });
+    });
   })();
 </script>
 {% endblock %}

@@ -1,5 +1,7 @@
 const path = require("path");
 
+const FALLBACK_POSTER = "./optimized/youtube-poster-1280.webp";
+
 const MIME_BY_EXT = {
   ".mp4": "video/mp4",
   ".m4v": "video/mp4",
@@ -28,7 +30,7 @@ module.exports = function () {
         src: `./videos/${file}`,
         type: MIME_BY_EXT[ext] || "video/mp4",
         title: item.title || "",
-        poster: poster ? `./videos/${poster}` : "",
+        poster: poster ? `./videos/${poster}` : FALLBACK_POSTER,
       };
     })
     .filter(Boolean);
