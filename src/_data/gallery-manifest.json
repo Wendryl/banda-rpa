@@ -1,7 +1,19 @@
 {
   "photos": [
     {
+      "file": "gallery/1000290796.png"
+    },
+    {
       "file": "gallery/1000299319.jpg"
+    },
+    {
+      "file": "gallery/1000309855.jpg"
+    },
+    {
+      "file": "gallery/1000291810.jpg"
+    },
+    {
+      "file": "gallery/1000299324.jpg"
     },
     {
       "file": "gallery/1000270189.jpg"
@@ -68,18 +80,6 @@
     },
     {
       "file": "gallery/1000238279.jpg"
-    },
-    {
-      "file": "gallery/1000290796.png"
-    },
-    {
-      "file": "gallery/1000291810.jpg"
-    },
-    {
-      "file": "gallery/1000309855.jpg"
-    },
-    {
-      "file": "gallery/1000299324.jpg"
     }
   ]
 }
