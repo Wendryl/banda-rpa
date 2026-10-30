@@ -53,3 +53,41 @@ collections:
                 name: file
                 widget: image
                 choose_url: false
+
+  - name: videos
+    label: "Vídeos"
+    description: "Adicionar, excluir e reordenar vídeos da banda"
+    format: json
+    files:
+      - name: videos
+        label: "Vídeos"
+        file: "src/_data/videos-manifest.json"
+        fields:
+          - label: "Vídeos"
+            name: videos
+            widget: list
+            collapsed: true
+            add_to_top: true
+            hint: "Envie o arquivo de vídeo (MP4 recomendado). Arquivos grandes deixam o site mais pesado e o GitHub limita uploads a ~100 MB; prefira vídeos curtos/compactados."
+            fields:
+              - label: "Vídeo"
+                name: file
+                widget: file
+                choose_url: false
+                media_folder: "/src/videos"
+                public_folder: "/videos"
+                media_library:
+                  allow_multiple: false
+                  config:
+                    max_file_size: 99614720
+              - label: "Título"
+                name: title
+                widget: string
+                required: false
+              - label: "Pôster (opcional)"
+                name: poster
+                widget: image
+                required: false
+                choose_url: false
+                media_folder: "/src/videos"
+                public_folder: "/videos"

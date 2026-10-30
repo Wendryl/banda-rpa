@@ -12,12 +12,15 @@ src/
 │   ├── site.js       # Junta site-config.json + icons.json em `site`
 │   ├── agenda.json   # Datas de shows (lista `shows`)
 │   ├── gallery-manifest.json  # Fotos da galeria (ordem e exclusões)
-│   └── gallery.js    # Lê a lista de src/_data/gallery-manifest.json
+│   ├── gallery.js    # Lê a lista de src/_data/gallery-manifest.json
+│   ├── videos-manifest.json   # Vídeos da banda (ordem e exclusões)
+│   └── videos.js     # Lê a lista de src/_data/videos-manifest.json
 ├── _includes/
 │   ├── layouts/base.njk  # Layout principal (head, nav, footer, lightbox)
 │   └── partials/         # Partials: nav, footer, head, svg
 ├── admin/            # ⬅️ Painel do CMS (index.html + config.yml)
 ├── gallery/          # ⬅️ Fotos da galeria — basta adicionar arquivos aqui
+├── videos/           # ⬅️ Vídeos enviados pelo CMS (MP4/WebM)
 ├── index.njk         # Página inicial
 └── gallery.njk       # Página da galeria
 ```
@@ -54,7 +57,7 @@ para que o login funcione.
 
 ### O que o CMS edita
 
-Apenas **Galeria** e **Shows** (agenda):
+**Galeria**, **Vídeos** e **Shows** (agenda):
 
 - **Shows** → `src/_data/agenda.json` — criar, editar e remover shows (CRUD).
 - **Galeria** → `src/_data/gallery-manifest.json` + `src/gallery/`:
@@ -62,6 +65,10 @@ Apenas **Galeria** e **Shows** (agenda):
   - *Excluir/ocultar uma foto* → remover o item da lista (o arquivo permanece em `src/gallery/`).
   - *Adicionar* → a nova foto entra no topo da lista.
   - *Reordenar* → arrastar os itens na lista.
+- **Vídeos** → `src/_data/videos-manifest.json` + `src/videos/`:
+  - *Enviar vídeos* → upload direto do arquivo (MP4 recomendado) para `src/videos/`.
+  - *Pôster* → imagem opcional exibida antes da reprodução.
+  - *Excluir/reordenar* → igual à galeria. Arquivos ficam versionados no Git.
 
 ## Como adicionar conteúdo
 
@@ -80,6 +87,26 @@ adicionadas no topo da lista e aparecem primeiro no site:
 
 O `file` aponta para o arquivo em `src/gallery/`. Se a lista estiver vazia, o
 site mostra todas as fotos da pasta em ordem numérica (fallback).
+
+### Vídeos
+Em `src/_data/videos-manifest.json`, use a lista `videos` (a ordem da lista é a
+ordem exibida no site). O `file` aponta para o arquivo em `src/videos/`:
+
+```json
+{
+  "videos": [
+    {
+      "file": "show-2026.mp4",
+      "title": "Apresentação em Pindamonhangaba",
+      "poster": "show-2026-poster.jpg"
+    }
+  ]
+}
+```
+
+> ⚠️ Vídeos são arquivos grandes e ficam no Git para sempre. Prefira clipes curtos
+> e compactados (MP4/H.264). O GitHub rejeita arquivos acima de ~100 MB. Para
+> apresentações longas, o ideal continua sendo YouTube/Vimeo.
 
 ### Novos shows na agenda
 Em `src/_data/agenda.json`, adicione um objeto por show na lista `shows`:

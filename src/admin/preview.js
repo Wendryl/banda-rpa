@@ -179,4 +179,88 @@ if (window.CMS) {
       h("div", { style: gridStyle }, photos)
     );
   });
+
+  CMS.registerPreviewTemplate("videos", function ({ entry, getAsset }) {
+    const list = entry.getIn(["data", "videos"]);
+    const items = [];
+    if (list && list.size) {
+      for (let i = 0; i < list.size; i++) {
+        items.push({
+          file: list.getIn([i, "file"]) || "",
+          title: list.getIn([i, "title"]) || "",
+          poster: list.getIn([i, "poster"]) || "",
+        });
+      }
+    }
+
+    function assetUrl(value) {
+      if (!value) return "";
+      try {
+        const asset = getAsset(value);
+        if (asset && asset.toString()) return asset.toString();
+      } catch (e) {}
+      let v = String(value);
+      if (/^https?:\/\//.test(v) || v.charAt(0) === "/") return v;
+      v = v.replace(/^\.\//, "");
+      return v.startsWith("videos/") ? "/" + v : "/videos/" + v;
+    }
+
+    const containerStyle = { margin: 0, padding: "20px", background: "#000" };
+    const gridStyle = {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+      gap: "16px",
+      maxWidth: "960px",
+      margin: "0 auto",
+    };
+    const cardStyle = {
+      borderRadius: "6px",
+      border: "1px solid #27272a",
+      background: "#18181b",
+      overflow: "hidden",
+    };
+    const videoStyle = { width: "100%", aspectRatio: "16 / 9", display: "block", background: "#000" };
+    const titleStyle = {
+      margin: 0,
+      padding: "12px 16px",
+      color: "#a1a1aa",
+      textTransform: "uppercase",
+      letterSpacing: "0.1em",
+      fontSize: "12px",
+    };
+
+    if (!items.length) {
+      return h(
+        "div",
+        { style: containerStyle },
+        h(
+          "p",
+          { style: { color: "#a1a1aa", textTransform: "uppercase", letterSpacing: "0.2em" } },
+          "Nenhum vídeo na galeria"
+        )
+      );
+    }
+
+    const videos = items.map(function (item, idx) {
+      return h(
+        "div",
+        { key: idx, style: cardStyle },
+        h("video", {
+          src: assetUrl(item.file),
+          poster: assetUrl(item.poster) || undefined,
+          controls: true,
+          preload: "metadata",
+          playsInline: true,
+          style: videoStyle,
+        }),
+        item.title ? h("figcaption", { style: titleStyle }, item.title) : null
+      );
+    });
+
+    return h(
+      "div",
+      { style: containerStyle },
+      h("div", { style: gridStyle }, videos)
+    );
+  });
 }
