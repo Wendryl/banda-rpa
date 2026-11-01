@@ -1,6 +1,10 @@
 {
   "videos": [
     {
+      "poster": "/videos/1000313296.jpg",
+      "file": "/videos/1000313296.jpg"
+    },
+    {
       "file": "/videos/vid-20260911-wa0152~2.mp4"
     },
     {
