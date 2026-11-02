@@ -1,11 +1,6 @@
 {
   "shows": [
     {
-      "date": "2026-10-31",
-      "city": "Pindamonhangaba",
-      "venue": "Assembleia de Deus Min. Araretama - Pindamonhangaba/SP"
-    },
-    {
       "date": "2026-11-07",
       "city": "Taubaté -SP",
       "venue": "Igreja Apascentando Vidas para o Reino"
@@ -19,6 +14,11 @@
       "date": "2026-11-28",
       "city": "Pindamonhangaba -Sp",
       "venue": "Igreja Fonte da Vida- Moreira Cesar "
+    },
+    {
+      "date": "2026-12-12",
+      "city": "Pindamonhangaba - Moreira Cesar",
+      "venue": "Moreira Cesar- Praça do sizas"
     }
   ]
 }
