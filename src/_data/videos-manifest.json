@@ -1,6 +1,11 @@
 {
   "videos": [
     {
+      "file": "/videos/vid-20261108-wa0041~2.mp4",
+      "poster": "/videos/1000325041.jpg",
+      "title": "Taubaté "
+    },
+    {
       "poster": "/videos/1000313296.jpg",
       "file": "/videos/vid-20261101-wa0006.mp4"
     },
@@ -10,10 +15,6 @@
     {
       "file": "/videos/10a27114-1d6e-4068-b30b-c34ba495cf93.mov",
       "title": "Ensaio da banda"
-    },
-    {
-      "file": "/videos/video-2026-10-29-10-27-01.mp4",
-      "title": "Culto de adolescentes - AD Madureira Castolira"
     }
   ]
 }
