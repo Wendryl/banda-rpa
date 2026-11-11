@@ -1,6 +1,10 @@
 {
   "videos": [
     {
+      "poster": "/videos/1000323754.jpg",
+      "file": "/videos/vid-20261108-wa0031~2.mp4"
+    },
+    {
       "file": "/videos/vid-20261108-wa0041~2.mp4",
       "poster": "/videos/1000325041.jpg",
       "title": "Taubaté "
