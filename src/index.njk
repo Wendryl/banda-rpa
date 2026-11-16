@@ -105,7 +105,7 @@ permalink: /index.html
     <div class="-mx-4 md:mx-0 flex flex-wrap justify-center gap-4 md:gap-6">
       {% for video in videos %}
         <figure class="text-left w-full md:w-[calc(50%-0.75rem)]">
-          <video controls preload="metadata" poster="{{ video.poster }}" class="w-full aspect-video object-cover rounded-none md:rounded-md border-y border-x-0 md:border-x border-zinc-800 bg-black shadow-2xl">
+          <video controls preload="metadata" poster="{{ video.poster }}" class="w-full aspect-video object-contain rounded-none md:rounded-md border-y border-x-0 md:border-x border-zinc-800 bg-black shadow-2xl">
             <source src="{{ video.src }}" type="{{ video.type }}">
             Seu navegador não suporta a reprodução de vídeos.
           </video>
